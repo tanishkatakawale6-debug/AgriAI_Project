@@ -214,7 +214,7 @@ elif st.session_state.page == "Detection":
 
         class_index = np.argmax(output_data)
         confidence = float(np.max(output_data)) * 100
-        label = labels[class_index]
+        label = labels[class_index] if class_index < len(labels) else "Unknown"
 
         # -------- LANGUAGE --------
         lang = st.selectbox("🌐 Select Result Language", ["English", "Hindi", "Marathi"])
