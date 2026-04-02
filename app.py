@@ -19,6 +19,13 @@ interpreter.allocate_tensors()
 
 input_details = interpreter.get_input_details()
 output_details = interpreter.get_output_details()
+
+import os
+
+labels_path = os.path.join("converted_keras", "label.txt")
+
+with open(labels_path, "r") as f:
+    labels = [line.strip() for line in f.readlines()]
 # ---------------- SIDEBAR ----------------
 st.sidebar.title("🌿 AgriAI Navigation")
 
