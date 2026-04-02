@@ -12,9 +12,9 @@ if "page" not in st.session_state:
 
 
 # ---------------- LOAD MODEL ----------------
-import tensorflow as tf
+from tflite_runtime.interpreter import Interpreter
 
-interpreter = tf.lite.Interpreter(model_path="converted_keras/model.tflite")
+interpreter = Interpreter(model_path="converted_keras/model.tflite")
 interpreter.allocate_tensors()
 
 input_details = interpreter.get_input_details()
