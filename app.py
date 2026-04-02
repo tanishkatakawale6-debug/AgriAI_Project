@@ -22,7 +22,9 @@ output_details = interpreter.get_output_details()
 
 import os
 
-labels_path = os.path.join("converted_keras", "label.txt")
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+labels_path = os.path.join(BASE_DIR, "converted_keras", "labels.txt")
 
 with open(labels_path, "r") as f:
     labels = [line.strip() for line in f.readlines()]
