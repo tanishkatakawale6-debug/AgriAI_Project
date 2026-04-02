@@ -12,14 +12,13 @@ if "page" not in st.session_state:
 
 
 # ---------------- LOAD MODEL ----------------
-from tflite_runtime.interpreter import Interpreter
+import tensorflow as tf
 
-interpreter = Interpreter(model_path="converted_keras/model.tflite")
+interpreter = tf.lite.Interpreter(model_path="converted_keras/model.tflite")
 interpreter.allocate_tensors()
 
 input_details = interpreter.get_input_details()
 output_details = interpreter.get_output_details()
-
 # ---------------- SIDEBAR ----------------
 st.sidebar.title("🌿 AgriAI Navigation")
 
