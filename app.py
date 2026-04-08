@@ -406,7 +406,7 @@ elif st.session_state.page == "Detection":
 
     if image is not None:
 
-        with col2:
+        with col2: 
             st.image(image, width=350)
 
         # ✅ IMPROVED INVALID IMAGE CHECK
